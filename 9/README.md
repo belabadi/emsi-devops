@@ -1,1 +1,0 @@
-Learned uname was Linux
