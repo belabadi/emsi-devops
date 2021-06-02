@@ -1,4 +1,3 @@
-
 #!/usr/bin/env ruby
 # Match "hbtn, hbttn, hbtttn, hbttttn" not "hbn"
 
