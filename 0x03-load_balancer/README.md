@@ -1,3 +1,1 @@
-Shell basics
-
-# emsi-tools
+Folder that contains tasks realted to load balancer project
