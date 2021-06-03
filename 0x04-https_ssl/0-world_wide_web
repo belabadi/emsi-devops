@@ -1,1 +1,13 @@
-
+#!/usr/bin/env bash
+#listing A records informations 
+Function () {   
+    if [ "$#" -eq 2 ]; then
+        dig $2.$1 | grep -A1 'ANSWER SECTION:' | awk 'FNR==2{print ( "The subdomain " v1 " is a " $4 " record and points to " $5 )}' v1=$2
+    elif [ "$#" -eq 1 ]; then
+        dig www.$1 | grep -A1 'ANSWER SECTION:' |  awk 'FNR==2{print ( "The subdomain www is a " $4 " record and points to " $5 )}'
+        dig lb-01.$1 | grep -A1 'ANSWER SECTION:' | awk 'FNR==2{print ( "The subdomain lb-01 is a " $4 " record and points to " $5 )}'
+        dig web-01.$1 | grep -A1 'ANSWER SECTION:' |awk 'FNR==2{print ( "The subdomain web-01 is a " $4 " record and points to " $5 )}'
+        dig web-02.$1 | grep -A1 'ANSWER SECTION:' | awk 'FNR==2{print ( "The subdomain web-02 is a " $4 " record and points to " $5 )}'
+    fi
+}
+Function $1 $2
